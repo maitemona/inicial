@@ -79,13 +79,17 @@ fieldset {
 textarea {
     resize: vertical;
 }
-
+h1{
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;/* BOLDER*/
+}
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
 
 .browserupgrade {
-    margin: 0.2em 0;
+   margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
@@ -95,22 +99,178 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+table{
+
+    width: 98%;
+    border-width: 1px;
+    border-style: groove;
+    border-color: #b3d4fc;
+}
+th {
+    height: 50px;
+}
+table td, table  th {
+    border: 1px solid #b3d4fc;
+
+}
+
+table tfoot tr{
+    border: 2px solid black;
+}
+table tfoot  td{
+    border:none;
+}
+table#series{
+
+}
+
+
+table caption{
+    visibility: hidden;
+
+}
+table:hover caption{
+    visibility: hidden;
+
+}
+.left{
+    float:left;
+}
+/***Maquetacion de Layout****/
+
+/***Maquetacion de menu****/
+nav{
+    position: fixed;
+    top:0;
+    height: 50px;
+    z-index: 8000;
+    width: 100%;
+}
+#wrapper{
+    position:relative;
+    top:60px;
+}
+/*****Gradiantes***********/
 
 
 
+nav{
+    background: #73870b; /* Old browsers */
+    background: -moz-linear-gradient(top, #73870b 0%, #73870b 16%, #7a8735 40%, #7c8456 62%, #7d8165 100%, #868781 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #73870b 0%,#73870b 16%,#7a8735 40%,#7c8456 62%,#7d8165 100%,#868781 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #73870b 0%,#73870b 16%,#7a8735 40%,#7c8456 62%,#7d8165 100%,#868781 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73870b', endColorstr='#868781',GradientType=0 ); /* IE6-9 */
+}
+nav ul{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#73870b+0,73870b+16,7a8735+40,7c8456+62,7d8165+100,868781+100 */
+
+    margin :0 auto;
+    width: 800px;
+}
+nav ul li{
+
+    float :left;
+    width: 150px;
+    text-align: center;
+    list-style: none;
+    border: 1px solid white;
+    /*hago mas ancho los li*/
+    padding: 15px;
+    background-color: #7a8735;
+    transition: background-color 2s;
+    border-radius: 5px;
+
+}
+
+nav ul li:hover{
+    background-color: darkkhaki;
+   /* color: aqua;*/
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+/*********bloques flotantes*******************/
+#ejer1 article{
+    float: left;
+    /**qme cuiente el padin y border del padre*/
+    box-sizing: border-box;
+    width: calc(100%/3);
+    padding-left: 20px;
+
+}
+/*que el primer article no tenga padding*/
+#ejer1 article:first-child{
+    padding-left: 0px;
+}
+#ejer1 article > div{
+    float: left;
+    width: 75%;
+    height: 200px;
+}
+#ejer1 article > div:last-child{/*que el texto con el boton me ocupe el 20% de lo dado  */
+    width: 25%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 90%;
+
+}
+#ejer1 article video{
+    width: 100%;
+}
+#ejer1 article > div button{
+    height: 35px;
+}
+#ejer1 article > div div{
+    height: calc(200px - 35px);
+
+}
+/*cebreado*/
+section:nth-child(odd)
+{
+    background-color: bisque;
+}
+section:nth-child(even)
+{
+    background-color: aquamarine;
+}
+
+/***********fin de bloques flotantes***************/
+/***********Margin y padding*************************/
+section{
+   padding:50px;
+
+}
+/**botones***/
+button{
+    border-bottom-left-radius: 5px;
+}
 
 
+/******FLEXXX*****/
+main section:last-child{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content : center;
+}
+main section:last-child article{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
+}
+main section:last-child > div{
 
+    flex-wrap: wrap;
 
+}
 
+.flex-container {
+    display: flex; /* ó inline-flex */
+    flex-direction: row;
 
-
-
-
-
-
-
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -279,4 +439,6 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+
+
 }
