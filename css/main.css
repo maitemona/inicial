@@ -140,13 +140,14 @@ table:hover caption{
 
 /***Maquetacion de menu****/
 nav{
-    position: fixed;
-    top:0;
-    height: 50px;
+   /* position: fixed;*/
+    top:60px;
+  /*  height: 50px;*/
     z-index: 8000;
     width: 100%;
 }
 #wrapper{
+
     position:relative;
     top:60px;
 }
@@ -155,6 +156,7 @@ nav{
 
 
 nav{
+
     background: #73870b; /* Old browsers */
     background: -moz-linear-gradient(top, #73870b 0%, #73870b 16%, #7a8735 40%, #7c8456 62%, #7d8165 100%, #868781 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, #73870b 0%,#73870b 16%,#7a8735 40%,#7c8456 62%,#7d8165 100%,#868781 100%); /* Chrome10-25,Safari5.1-6 */
@@ -163,9 +165,8 @@ nav{
 }
 nav ul{
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#73870b+0,73870b+16,7a8735+40,7c8456+62,7d8165+100,868781+100 */
-
     margin :0 auto;
-    width: 800px;
+    /*width: 900px;*/
 }
 nav ul li{
 
@@ -248,7 +249,7 @@ button{
 }
 
 
-/******FLEXXX*****/
+/******FLEXXX*****************/
 main section:last-child{
     display:flex;
     flex-wrap: wrap;
@@ -269,7 +270,60 @@ main section:last-child > div{
 .flex-container {
     display: flex; /* ó inline-flex */
     flex-direction: row;
+    /*flex-flow: row wrap;*/
+    background-color: #474749;
 
+}
+.flexiflow{
+    flex-flow: row wrap;
+}
+.flexdirec{
+    flex-direction: row;
+}
+/****************EJERCICIO 2***********************/
+header, footer {
+    display: block;
+}
+
+article > div:first-child{
+    margin-right: 11px;
+    background-color: red;
+}
+article > div:first-child div{
+   /* width: 250px;*/
+    background-color: yellow;
+}
+article > div:nth-child(2) {
+   /* width: 350px;*/
+    background-color: green;
+}
+/*#contenedor-flexible {
+    background-color: #474749;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+article:first-child {
+    padding-left: 0px;
+}
+.texto1{
+    width: 250px;
+}
+.texto2{
+    width:350px;
+}
+.separator{
+    margin-right: 10px;
+}*/
+/*****FOOTER*****************/
+footer {
+    display: flex;
+    align-content: flex-end;
+    padding: 1.5rem 1.5rem;
+    background: gray(25%);
+    color: gray(60%);
+    font-size: 0.85em;
+    text-align: center;
 }
 /* ==========================================================================
    Helper classes
@@ -345,6 +399,48 @@ main section:last-child > div{
     clear: both;
 }
 
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+    .ocultar{
+        visibility: visible;
+        display: none;
+    }
+    main section:last-child > div{
+        flex-direction: column;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    nav ul li{
+        background-color: #2e6da4;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .ocultar{
+        visibility: hidden;
+    }
+    nav ul li{
+        background-color: darkseagreen;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
