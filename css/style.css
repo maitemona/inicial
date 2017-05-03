@@ -1,0 +1,46 @@
+
+
+main{
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/**contenedor padre flexibe***/
+.tabla-row{
+    display: -webkit-flex;
+    display:inline-flex;
+    display:flex;
+}
+/*clase hija flexibe*/
+.wrapper{
+    /*para chrome*/
+    display: -webkit-flex;
+    /*para ie<8*/
+    display:inline-flex;
+    /*Standar*/
+    display:flex;
+}
+/*column = flex-items*/
+
+.column{
+    /*que no crezca el hijo , solo que se despliege*/
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    /*ocupar espacio relativo al que nadie ocupe, le vamos a dar un ancho fijo*/
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    vertical-align: top;
+
+}
+/**Anchos de columnas y comportamientos de la estructura de columnas**/
+.index{
+    width: 15px;
+}
+
+
+/**Estan van a crecer pq son hijas*/
+.name-surname,.name-surname-dni,.email-telephone,.address-city-zip_code{
+
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+

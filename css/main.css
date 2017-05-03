@@ -270,15 +270,15 @@ main section:last-child > div{
 .flex-container {
     display: flex; /* ó inline-flex */
     flex-direction: row;
-    /*flex-flow: row wrap;*/
-    background-color: #474749;
+    flex-flow: row wrap;
+   /* background-color: #474749;*/
 
 }
-.flexiflow{
-    flex-flow: row wrap;
-}
-.flexdirec{
+article{
+    display:flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
 }
 /****************EJERCICIO 2***********************/
 header, footer {
@@ -290,13 +290,14 @@ article > div:first-child{
     background-color: red;
 }
 article > div:first-child div{
-   /* width: 250px;*/
+
     background-color: yellow;
 }
 article > div:nth-child(2) {
-   /* width: 350px;*/
+
     background-color: green;
 }
+
 /*#contenedor-flexible {
     background-color: #474749;
     display: flex;
