@@ -1,5 +1,3 @@
-
-
 main{
     flex-direction: column;
     flex-wrap: wrap;
@@ -9,8 +7,10 @@ main{
     display: -webkit-flex;
     display:inline-flex;
     display:flex;
+
 }
 /*clase hija flexibe*/
+/**aqui solo se define que es flex*/
 .wrapper{
     /*para chrome*/
     display: -webkit-flex;
@@ -29,18 +29,112 @@ main{
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
     vertical-align: top;
-
+    /*aliniar la caja*/
+   text-align:  center;
+}
+.header{
+    background-color: #2e6da4;
+    color: #FFFFFF;
 }
 /**Anchos de columnas y comportamientos de la estructura de columnas**/
 .index{
     width: 15px;
 }
-
-
-/**Estan van a crecer pq son hijas*/
+.dni{
+    width:90px;
+}
+.date-of-birth{
+    width: 100px;
+}
+.name{
+    width:100px;
+}
+.surname{
+    width: 150px;
+}
+.email{
+    width: 150px;
+}
+.telephone{
+   width:  150px;
+}
+.zip_code{
+    width: 80px;
+}
+.city{
+    width: 200px;
+}
+.address{
+    width: 210px;
+}
+/***********************************************************
+    dentro de que son Estan van a crecer , como tb son padres(pq tienes class wrapper)*, van a cambiar el flex-direction
+    segun el tamaño de pantalla)
+**********************************************************/
 .name-surname,.name-surname-dni,.email-telephone,.address-city-zip_code{
-
     -webkit-flex-grow: 1;
     flex-grow: 1;
+
 }
 
+
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+    .name-surname,.name-surname-dni,.email-telephone,.address-city-zip_code
+    ,.name-surname-dni-date_of_birth{
+       flex-direction: column;
+        /*centar en el eje vertical pq la direccion es column*/
+        align-items: center;
+        /*POR DEFECTO justify-content: flex-start; afecta al eje principal*/
+   }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .name-surname-dni-date_of_birth{
+        flex-direction:row;
+        /*cambio el eje al horizontal, cambio la justifucacion a la centrado a la vertical*/
+        justify-content: center;
+        align-items: flex-start;/*me lo justifica a la izquierda en el eje X*/
+
+    }
+/*    .name-surname-dni{
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;/*me lo justifica a la izquierda en el eje X*/
+   /* }*/
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+   /* .name-surname-dni,.email-telephone,.address-city-zip_code{
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: flex-start;
+    }*/
+    .name-surname-dni{
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .name-surname,
+    .address-city-zip_code,
+    .email-telephone{
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
